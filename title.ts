@@ -12,6 +12,7 @@ function onEditTitle(e: GoogleAppsScript.Events.SheetsOnEdit) {
     })
 
     if (frequency > 1) {
+        jumpToFirst(NamedRange.Title, e.value)
         e.range.setValue(e.oldValue)
         SpreadsheetApp.getUi().alert("Problem with this name has already been added")
     }

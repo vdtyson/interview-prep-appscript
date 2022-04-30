@@ -6,8 +6,21 @@ enum NamedRange {
     Title = "Title"
 }
 
-class Sheet {
-    static Problems = "Problems"
+enum Sheet {
+    Problems = "Problems"
+}
+
+function jumpToFirst(r: NamedRange, value: any) {
+    const range = getRange(r)
+    const rows = range.getValues()
+    for (let i = 0; i < rows.length; i++) {
+        for (let j = 0; j < range[i].length; j++) {
+            if (range[i][j] == value) {
+                range.getCell(i, j).activateAsCurrentCell()
+                break;
+            }
+        }
+    }
 }
 
 function getRange(r: NamedRange): GoogleAppsScript.Spreadsheet.Range {
