@@ -3,7 +3,8 @@ enum NamedRange {
     DaysLeft = "DaysLeft",
     LastAttempted = "LastAttempted",
     ReattemptAfter = "ReattemptAfter",
-    Title = "Title"
+    Title = "Title",
+    TimedAttemptData = "TimedAttemptData"
 }
 
 enum Sheet {
